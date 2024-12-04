@@ -27,6 +27,10 @@ namespace HW6
             {
                 Console.WriteLine($"Помилка десеріалізації JSON: {ex.Message}");
             }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine($"Файл не знайдено: {ex.Message}"); 
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Інша помилка: {ex.Message}");
