@@ -13,4 +13,11 @@ namespace HW6
         [JsonPropertyName("PublishingHouse")]
         public BookInfo PublishingHouse { get; set; } = new BookInfo();
     }
+
+    public class BookInfo
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Adress { get; set; } = string.Empty;
+    }
 }
