@@ -1,36 +1,36 @@
-﻿using System.Text.Encodings.Web;
-using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
-using System.Text.Unicode;
-using DZ6;
-using System;
 
-
-try
+namespace HW6
 {
-    const string InputPath = @"D:\githw6\DZ6\DZ6\input.json";
-
-    FileStream fs = new FileStream(InputPath, FileMode.OpenOrCreate);
-
-    var books = await JsonSerializer.DeserializeAsync<List<Book>>(fs);
-
-
-
-
-    foreach (var book in books)
+    public class Program
     {
+        public static void Main()
+        {
+            try
+            {
+                string jsonString = File.ReadAllText(@"D:\gitmaui\HW6\HW6\input.json");
 
-        Console.WriteLine($"Title: {book.Title}");
-        Console.WriteLine($"Publishing House: {book.PublishingHouse.Name}");
-        Console.WriteLine($"Adress: {book.PublishingHouse.Adress}");
-        Console.WriteLine();
+                List<Book> books = JsonSerializer.Deserialize<List<Book>>(jsonString);
 
+                foreach (var book in books)
+                {
+                    Console.WriteLine($"Назва: {book.Title}");
+                    Console.WriteLine($"Видавництво: {book.PublishingHouse.Name}");
+                    Console.WriteLine($"Адреса: {book.PublishingHouse.Adress}");
+                    Console.WriteLine();
+                }
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine($"Помилка десеріалізації JSON: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Інша помилка: {ex.Message}");
+            }
+        }
     }
-
-    fs.Close();
-
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
 }

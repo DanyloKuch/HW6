@@ -1,16 +1,16 @@
 ﻿[
   {
     "PublishingHouseId": 2,
-    "Title": "Підручник. Алгебра 8",
+    "Name": "Підручник. Алгебра 8",
     "PublishingHouse": {
       "Id": 2,
-      "Name": "ГIМНАЗIЯ",
+      "Name": "ГІМНАЗІЯ",
       "Adress": "Адреса 2"
     }
   },
   {
     "PublishingHouseId": 1,
-    "Title": "Щоденник нейрохірурга",
+    "Name": "Щоденник нейрохірурга",
     "PublishingHouse": {
       "Id": 1,
       "Name": "Видавництво старого лева",
@@ -19,12 +19,11 @@
   },
   {
     "PublishingHouseId": 2,
-    "Title": "Посібник. Алгебра 9",
+    "Name": "Посібник. Алгебра 9",
     "PublishingHouse": {
       "Id": 2,
-      "Name": "ГIМНАЗIЯ",
+      "Name": "ГІМНАЗІЯ",
       "Adress": "Адреса 2"
     }
   }
 ]
-

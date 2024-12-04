@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
-namespace DZ6
+namespace HW6
 {
-    internal class Book
+    public class Book
     {
         [JsonIgnore]
         public int PublishingHouseId { get; set; }
 
         [JsonPropertyName("Name")]
-        public string? Title { get; }
+        public string? Title { get; set; }
 
-        public PublishingHouse? PublishingHouse { get; set; }
+        [JsonPropertyName("PublishingHouse")]
+        public BoolInformation PublishingHouse { get; set; }
     }
-
 }
